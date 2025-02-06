@@ -24,7 +24,7 @@ export function ContentArea({ activeTab }: ContentAreaProps) {
   };
 
   return (
-    <div>
+    <div className="ml-64 p-4">
       <h2 className="text-2xl font-bold mb-4">
         {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
       </h2>

@@ -37,7 +37,7 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
   ];
 
   return (
-    <aside className="w-64 bg-white shadow-md min-h-screen p-4 sticky top-0">
+    <aside className="w-64 bg-white shadow-md h-screen p-4 fixed top-0 left-0">
       <div className="space-y-4">
         {navItems.map((item) => {
           const Icon = item.icon;
