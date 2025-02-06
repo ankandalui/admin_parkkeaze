@@ -21,7 +21,7 @@ export default function Navbar() {
                 src={"/assets/images/icon.png"} // Remove `/public`
                 alt="ParkEaze Logo"
               />
-              <span className="text-xl font-bold text-primary">ParkEaze</span>
+              <span className="text-2xl font-bold text-primary">ParkEaze</span>
             </Link>
           </div>
 
@@ -33,9 +33,9 @@ export default function Navbar() {
             <Link href="/features" className="text-gray-700 hover:text-primary">
               Features
             </Link>
-            <Link href="/pricing" className="text-gray-700 hover:text-primary">
+            {/* <Link href="/pricing" className="text-gray-700 hover:text-primary">
               Pricing
-            </Link>
+            </Link> */}
             <Link href="/contact" className="text-gray-700 hover:text-primary">
               Contact
             </Link>

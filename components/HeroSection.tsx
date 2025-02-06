@@ -1,7 +1,14 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export function HeroSection() {
+  const scrollToVideo = () => {
+    const videoSection = document.getElementById("video-section");
+    videoSection?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative h-[90vh] flex items-center">
       <div className="absolute inset-0 z-0">
@@ -22,13 +29,16 @@ export function HeroSection() {
           automated payments, and seamless user experience.
         </p>
         <div className="space-x-4">
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            Get Started
-          </Button>
+          <Link href="/get-started">
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
+              Get Started
+            </Button>
+          </Link>
           <Button
             size="lg"
             variant="outline"
             className="text-black border-white hover:text-white hover:bg-white/10"
+            onClick={scrollToVideo}
           >
             Watch Demo
           </Button>

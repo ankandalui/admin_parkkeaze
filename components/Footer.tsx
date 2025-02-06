@@ -1,5 +1,6 @@
-import { Car, Facebook, Twitter, Instagram, Mail, Phone } from 'lucide-react';
-import Link from 'next/link';
+import { Car, Facebook, Twitter, Instagram, Mail, Phone } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -9,7 +10,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Car className="h-8 w-8" />
+              <Image
+                width={32}
+                height={32}
+                src="/assets/images/icon.png"
+                alt="ParkEaze Logo"
+              />
               <span className="text-xl font-bold">ParkEaze</span>
             </div>
             <p className="text-gray-400">
@@ -21,10 +27,35 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-gray-400 hover:text-white">About Us</Link></li>
-              <li><Link href="/features" className="text-gray-400 hover:text-white">Features</Link></li>
-              <li><Link href="/pricing" className="text-gray-400 hover:text-white">Pricing</Link></li>
-              <li><Link href="/contact" className="text-gray-400 hover:text-white">Contact</Link></li>
+              <li>
+                <Link href="/about" className="text-gray-400 hover:text-white">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/features"
+                  className="text-gray-400 hover:text-white"
+                >
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/pricing"
+                  className="text-gray-400 hover:text-white"
+                >
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-gray-400 hover:text-white"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -61,7 +92,9 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} ParkEaze. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} ParkEaze. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

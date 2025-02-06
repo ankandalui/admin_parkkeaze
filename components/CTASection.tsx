@@ -15,7 +15,7 @@ export function CTASection() {
           <Button
             size="lg"
             variant="outline"
-            className="text-white border-white hover:bg-white/10"
+            className="text-black border-white hover:text-white hover:bg-white/10"
           >
             Contact Sales
           </Button>
