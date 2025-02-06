@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Car, Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,12 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <Car className="h-8 w-8 text-primary" />
+              <Image
+                width={32}
+                height={32}
+                src={"/assets/images/icon.png"} // Remove `/public`
+                alt="ParkEaze Logo"
+              />
               <span className="text-xl font-bold text-primary">ParkEaze</span>
             </Link>
           </div>
