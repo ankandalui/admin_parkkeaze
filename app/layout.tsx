@@ -1,15 +1,14 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { Toaster } from '@/components/ui/toaster';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] });
+import { Toaster } from "@/components/ui/toaster";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'ParkEaze - Smart Parking Management',
-  description: 'Revolutionizing parking management with smart solutions',
+  title: "ParkEaze - Smart Parking Management",
+  description: "Revolutionizing parking management with smart solutions",
 };
 
 export default function RootLayout({
@@ -20,9 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body>
-        <Navbar />
+        {/* <Navbar /> */}
         <main>{children}</main>
-        <Footer />
+        {/* <Footer /> */}
         <Toaster />
       </body>
     </html>
