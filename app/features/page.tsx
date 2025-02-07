@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 
 export default function Features() {
   const features = [
@@ -123,13 +124,15 @@ export default function Features() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Transform your parking experience with our innovative solutions
           </p>
-          <Button
-            size="lg"
-            variant="outline"
-            className="text-white border-white hover:bg-white/10"
-          >
-            Request Demo
-          </Button>
+          <Link href="/contact">
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-black border-white hover:bg-white/10"
+            >
+              Request Demo
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

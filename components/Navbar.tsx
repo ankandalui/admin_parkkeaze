@@ -33,9 +33,9 @@ export default function Navbar() {
             <Link href="/features" className="text-gray-700 hover:text-primary">
               Features
             </Link>
-            {/* <Link href="/pricing" className="text-gray-700 hover:text-primary">
-              Pricing
-            </Link> */}
+            <Link href="/about" className="text-gray-700 hover:text-primary">
+              About us
+            </Link>
             <Link href="/contact" className="text-gray-700 hover:text-primary">
               Contact
             </Link>
@@ -82,16 +82,22 @@ export default function Navbar() {
                 Pricing
               </Link>
               <Link
+                href="/about"
+                className="block px-3 py-2 text-gray-700 hover:text-primary"
+              >
+                about Us
+              </Link>
+              <Link
                 href="/contact"
                 className="block px-3 py-2 text-gray-700 hover:text-primary"
               >
                 Contact
               </Link>
-              <Link href="/admin" className="block px-3 py-2">
+              {/* <Link href="/admin" className="block px-3 py-2">
                 <Button variant="default" className="w-full">
                   Admin Dashboard
                 </Button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         )}
