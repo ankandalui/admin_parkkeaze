@@ -41,6 +41,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import ParkingSlotGenerator from "@/components/ParkingSlotGenerator";
 
 const containerStyle = {
   width: "100%",
@@ -613,90 +614,17 @@ export default function ParkingSpaces() {
               </div>
 
               <div className="space-y-2 md:col-span-2">
-                <Label>Floor Configuration</Label>
-                {formData.floors.map((floor, index) => (
-                  <div key={index} className="p-4 border rounded-md mb-4">
-                    <div className="flex justify-between items-center mb-4">
-                      <h4 className="font-medium">Floor {index + 1}</h4>
-                      {index > 0 && (
-                        <Button
-                          type="button"
-                          variant="ghost"
-                          size="icon"
-                          onClick={() => handleRemoveFloor(index)}
-                        >
-                          <X className="h-4 w-4" />
-                        </Button>
-                      )}
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor={`floorNumber-${index}`}>
-                          Floor Number
-                        </Label>
-                        <Input
-                          id={`floorNumber-${index}`}
-                          value={floor.floorNumber}
-                          onChange={(e) => {
-                            const newFloors = [...formData.floors];
-                            newFloors[index].floorNumber = e.target.value;
-                            setFormData((prev) => ({
-                              ...prev,
-                              floors: newFloors,
-                            }));
-                          }}
-                          placeholder="G, 1, 2, etc."
-                        />
-                      </div>
-                      <div>
-                        <Label htmlFor={`floorName-${index}`}>Floor Name</Label>
-                        <Input
-                          id={`floorName-${index}`}
-                          value={floor.floorName}
-                          onChange={(e) => {
-                            const newFloors = [...formData.floors];
-                            newFloors[index].floorName = e.target.value;
-                            setFormData((prev) => ({
-                              ...prev,
-                              floors: newFloors,
-                            }));
-                          }}
-                          placeholder="Ground Floor, First Floor, etc."
-                        />
-                      </div>
-                    </div>
-                    <Button
-                      type="button"
-                      variant="outline"
-                      size="sm"
-                      className="mt-4"
-                      onClick={() => generateSlots(index)}
-                    >
-                      Generate Slots
-                    </Button>
-                    {floor.slots.length > 0 && (
-                      <div className="mt-4 grid grid-cols-4 gap-2">
-                        {floor.slots.map((slot) => (
-                          <div
-                            key={slot.id}
-                            className="p-2 text-center border rounded-md text-sm"
-                          >
-                            {slot.slotNumber}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={handleAddFloor}
-                  className="w-full"
-                >
-                  <Plus className="h-4 w-4 mr-2" />
-                  Add Floor
-                </Button>
+                {/* Integrate ParkingSlotGenerator here */}
+                <ParkingSlotGenerator
+                  totalSpots={formData.totalSpots}
+                  floors={formData.floors}
+                  onTotalSpotsChange={(value) =>
+                    setFormData((prev) => ({ ...prev, totalSpots: value }))
+                  }
+                  onFloorsChange={(floors) =>
+                    setFormData((prev) => ({ ...prev, floors }))
+                  }
+                />
               </div>
 
               <div className="space-y-2 md:col-span-2">
