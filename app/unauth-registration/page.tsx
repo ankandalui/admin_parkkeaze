@@ -68,6 +68,9 @@ const paymentMethods = [
 
 export default function UnAuthBookings() {
   const [form, setForm] = useState({
+    userId: "",
+    userName: "",
+    userEmail: "",
     phoneNumber: "",
     carType: "sedan",
     carName: "",
@@ -80,7 +83,7 @@ export default function UnAuthBookings() {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("upi");
   const [loading, setLoading] = useState(false);
 
-  const basePrice = 100; // Base price per hour
+  const basePrice = 40; // Base price per hour
   const totalHours = Number(form.hours) + Number(form.minutes) / 60;
   const totalAmount =
     totalHours <= 1 ? basePrice : basePrice + basePrice * (totalHours - 1);
@@ -88,7 +91,13 @@ export default function UnAuthBookings() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!form.phoneNumber || !form.carName || !form.carNumber) {
+    if (
+      !form.userName ||
+      !form.userEmail ||
+      !form.phoneNumber ||
+      !form.carName ||
+      !form.carNumber
+    ) {
       alert("Please fill all fields");
       return;
     }
@@ -121,6 +130,9 @@ export default function UnAuthBookings() {
 
       // Save booking to Firestore
       const bookingData = {
+        userId: "",
+        userName: "",
+        userEmail: "",
         phoneNumber: form.phoneNumber,
         carType: form.carType,
         carName: form.carName,
@@ -144,6 +156,9 @@ export default function UnAuthBookings() {
 
       // Reset form
       setForm({
+        userId: "",
+        userName: "",
+        userEmail: "",
         phoneNumber: "",
         carType: "sedan",
         carName: "",
@@ -162,20 +177,41 @@ export default function UnAuthBookings() {
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md mx-auto space-y-8">
-        <Card className="p-8 text-center">
+        {/* <Card className="p-8 text-center">
           <h1 className="text-2xl font-bold mb-6">Scan to Share Booking</h1>
           <div className="bg-white p-4 rounded-lg inline-block"></div>
           <p className="mt-4 text-gray-600">
             Share this QR code to let others make parking reservations
           </p>
-        </Card>
+        </Card> */}
 
         <Card className="p-6">
-          <h1 className="text-2xl font-bold text-center mb-6">
-            Parking Booking
-          </h1>
+          <h1 className="text-2xl font-bold text-center mb-6">ParkEaze</h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="space-y-2">
+              <Label htmlFor="phoneNumber">User Name</Label>
+              <Input
+                id="userName"
+                type="text"
+                value={form.userName}
+                onChange={(e) => setForm({ ...form, userName: e.target.value })}
+                placeholder="Enter your name"
+                maxLength={100}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="phoneNumber">Email</Label>
+              <Input
+                id="userEmail"
+                type="email"
+                value={form.userEmail}
+                onChange={(e) =>
+                  setForm({ ...form, userEmail: e.target.value })
+                }
+                placeholder="Enter your email"
+              />
+            </div>
             <div className="space-y-2">
               <Label htmlFor="phoneNumber">Phone Number</Label>
               <Input
