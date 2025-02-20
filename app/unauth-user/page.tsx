@@ -4,7 +4,7 @@ import { QRCodeSVG } from "qrcode.react";
 import { Card } from "@/components/ui/card";
 
 export default function Home() {
-  const bookingUrl = "https://parkeaze.vercel.app/unauthbookings";
+  const bookingUrl = "https://parkeaze.vercel.app/unauth-registration";
   //   const bookingUrl = "http://localhost:3000/unauthbookings";
 
   return (
