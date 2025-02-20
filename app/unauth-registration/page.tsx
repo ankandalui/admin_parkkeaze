@@ -130,9 +130,9 @@ export default function UnAuthBookings() {
 
       // Save booking to Firestore
       const bookingData = {
-        userId: "",
-        userName: "",
-        userEmail: "",
+        userId: form.userId,
+        userName: form.userName,
+        userEmail: form.userEmail,
         phoneNumber: form.phoneNumber,
         carType: form.carType,
         carName: form.carName,
