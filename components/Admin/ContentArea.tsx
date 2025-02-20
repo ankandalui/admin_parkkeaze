@@ -2,6 +2,7 @@ import { Overview } from "./content/Overview";
 import { Users } from "./content/Users";
 import ParkingSpaces from "./content/ParkingSpaces";
 import { Payments } from "./content/Payments";
+import Unauthorize from "./content/Unauthorize";
 
 interface ContentAreaProps {
   activeTab: string;
@@ -18,6 +19,8 @@ export function ContentArea({ activeTab }: ContentAreaProps) {
         return <ParkingSpaces />;
       case "payments":
         return <Payments />;
+      case "unauthorize":
+        return <Unauthorize />;
       default:
         return <Overview />;
     }

@@ -7,6 +7,7 @@ import {
   ParkingCircle,
   CreditCard,
   LogOut,
+  ShieldBan,
 } from "lucide-react";
 import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
@@ -33,6 +34,7 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
     { id: "overview", icon: BarChart, label: "Overview" },
     { id: "users", icon: Users, label: "Users" },
     { id: "parking", icon: ParkingCircle, label: "Parking Spaces" },
+    { id: "unauthorize", icon: ShieldBan, label: "Unauthorize" },
     { id: "payments", icon: CreditCard, label: "Payments" },
   ];
 
