@@ -13,7 +13,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <FeaturesSection />
-      <PresentationSlider />
+      {/* <PresentationSlider /> */}
       <VideoSection />
       <CTASection />
       <Toaster />
